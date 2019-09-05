@@ -19,7 +19,8 @@ class CreateProject extends Component {
     }
     handleSubmit = e => {
         e.preventDefault();
-        console.log(this.state)
+        this.props.createProject(this.state);
+        
     }
   render() {
     return (
