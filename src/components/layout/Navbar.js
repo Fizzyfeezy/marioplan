@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import SignedInLinks from './SignedInLinks';
 import Logo from './mario.png';
 import SignedOutLinks from './SignedOutLinks';
+import {connect} from 'react-redux';
 
 function Navbar() {
     return (
@@ -20,4 +21,10 @@ function Navbar() {
     )
 }
 
-export default Navbar
+const mapStateToProps = (state) => {
+    return{
+        signIn : signIn.dis
+    }
+}
+
+export default connect(mapStateToProps)(Navbar)
