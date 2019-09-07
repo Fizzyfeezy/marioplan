@@ -23,7 +23,7 @@ function Navbar() {
 
 const mapStateToProps = (state) => {
     return{
-        signIn : signIn.dis
+        //signIn : state.auth.signIn
     }
 }
 

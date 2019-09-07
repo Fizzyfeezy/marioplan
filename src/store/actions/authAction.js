@@ -1,8 +1,10 @@
-export const createProject = (credentials) => {
-    return (dispatch, getState, {getFirebase}) => {
+import firebase from 'firebase/app';
+
+export const signIn = (credentials) => {
+    return (dispatch, getState) => {
         //make async call to database
-        const firestore = getFirebase();
-        firestore.auth().signInWithEmailPassword(
+        //const firebase = getFirebase();
+        firebase.auth().signInWithEmailAndPassword(
             credentials.email,
             credentials.password
         ).then(() => {

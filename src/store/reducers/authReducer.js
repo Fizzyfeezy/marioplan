@@ -1,14 +1,22 @@
-const initState = {}
+const initState = {
+    authError : null
+}
 
 const authReducer = (state = initState, action) => {
     switch (action.type) {
-        case "LOGIN_SUCCESS":
-            console.log('create project', action.project)
-            return state;
         case "LOGIN_ERROR":
-            console.log('create project error', action.err)
-            return state;
-        default:
+            console.log('login failed')
+            return {
+                ...state,
+                authError : 'Login failed'
+            }
+        case "LOGIN_SUCCESS":
+            console.log('login success')
+            return {
+                ...state,
+                authError : null
+            }
+            default:
             return state;
     } 
 }
