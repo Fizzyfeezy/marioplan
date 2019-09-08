@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import M from 'materialize-css';
-import './auth.css'
+import './auth.css';
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 
 class SignUp extends Component {
     constructor(props) {
@@ -38,6 +40,8 @@ class SignUp extends Component {
         console.log(this.state)
     }
   render() {
+    const {auth} = this.props
+    if (auth.uid) return <Redirect to = '/' />
     return (
       <div className="container space">
         <div className="row">
@@ -105,4 +109,16 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+const mapStateToProps = (state) => {
+    return {
+        auth : state.firebase.auth
+    }
+}
+
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         signUp : (creds) => dispatch(signIn(creds))
+//     }
+// }
+
+export default connect(mapStateToProps)(SignUp);

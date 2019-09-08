@@ -8,7 +8,7 @@ import rootReducer from './store/reducers/rootReducer';
 import {Provider} from 'react-redux'
 import thunk from 'redux-thunk';
 import { createFirestoreInstance, getFirestore } from 'redux-firestore'
-import { ReactReduxFirebaseProvider, getFirebase} from 'react-redux-firebase'
+import { ReactReduxFirebaseProvider, getFirebase, reactReduxFirebase} from 'react-redux-firebase'
 //import {reactReduxFirebase, getFirebase} from 'react-redux-firebase';
 //import {reduxFirestore, getFirestore} from 'redux-firestore';
 //import fbConfig from './config/fbConfig';
@@ -34,12 +34,13 @@ const firebaseConfig = {
   
 const store = createStore(rootReducer, 
     compose(
-        applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore})),
+        applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore}))
 ));
 
 const rrfConfig = {
     userProfile: 'users',
-    useFirestoreForProfile: true // Firestore for Profile instead of Realtime DB
+    useFirestoreForProfile: true, // Firestore for Profile instead of Realtime DB
+    attachAuthIsReady : true
   }
  const rrfProps = {
       firebase,
@@ -47,6 +48,11 @@ const rrfConfig = {
       dispatch: store.dispatch,
       createFirestoreInstance // <- needed if using firestore
     }
+
+//   store.firebaseAuthIsReady.then(() => {
+//   ReactDOM.render(<Provider store={store}><ReactReduxFirebaseProvider {...rrfProps}><App /></ReactReduxFirebaseProvider></Provider>, document.getElementById('root'));
+// })
+
 ReactDOM.render(<Provider store={store}><ReactReduxFirebaseProvider {...rrfProps}><App /></ReactReduxFirebaseProvider></Provider>, document.getElementById('root'));
 
 
