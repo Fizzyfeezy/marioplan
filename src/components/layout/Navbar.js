@@ -15,7 +15,7 @@ function Navbar(props) {
                     <Link to = '/' className="brand-logo">
                         <img src = {Logo} width="50" height="50" alt="mario plan"/>    
                     </Link>
-                    {links}
+                    {auth.isLoaded && links}
                 </div>   
             </nav>
         </div>
