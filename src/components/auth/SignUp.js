@@ -39,7 +39,15 @@ class SignUp extends Component {
     handleSubmit = e => {
         e.preventDefault();
         this.props.signUp(this.state);
-        //console.log(this.state)
+        this.setState({
+            email: '',
+             password: '',
+             firstname: '',
+             lastname: '',
+             phonenumber: '',
+             gender:'',
+             confirmpassword: ''
+        })
     }
   render() {
     const {auth, authError} = this.props
@@ -76,7 +84,7 @@ class SignUp extends Component {
                         <div className="col s12 m6">
                             <div className="input-field">
                                 <select onChange={this.selectChange}>
-                                    <option value={this.state.gender} disabled defaultValue>sex</option>
+                                    <option value="" disabled active>sex</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                 </select>
