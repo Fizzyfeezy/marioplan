@@ -84,7 +84,7 @@ class SignUp extends Component {
                         <div className="col s12 m6">
                             <div className="input-field">
                                 <select onChange={this.selectChange}>
-                                    <option value="" disabled active>sex</option>
+                                    <option value="" disabled true = "true">sex</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                 </select>
