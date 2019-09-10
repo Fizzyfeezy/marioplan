@@ -1,6 +1,7 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
-admin.initializeApp(functions.config().firebase)
+//admin.initializeApp(functions.config().firebase);
+admin.initializeApp()
 
 exports.helloWorld = functions.https.onRequest((request, response) => {
  response.send("Hello Mario!");
@@ -25,4 +26,20 @@ exports.projectCreated = functions.firestore
     }
 
     return createNotification(notification);
-})
+});
+
+exports.userJoined = functions.auth.user()
+    .onCreate(user => {
+        return admin.firestore().collection('users')
+            .doc(user.uid).get().then(doc => {
+
+                const newUser = doc.data();
+                const notification = {
+                    content : 'Joined the party',
+                    user : `${newUser.firstname} ${newUser.lastname}`,
+                    time : admin.firestore.FieldValue.serverTimestamp()
+                }
+
+                return createNotification(notification);
+            })
+    });
