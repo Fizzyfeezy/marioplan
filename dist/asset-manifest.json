@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5473d1b0.chunk.css",
+    "main.js": "/static/js/main.93c8dad5.chunk.js",
+    "main.js.map": "/static/js/main.93c8dad5.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.c99bf0a6.js",
+    "runtime~main.js.map": "/static/js/runtime~main.c99bf0a6.js.map",
+    "static/css/2.ae9e8b99.chunk.css": "/static/css/2.ae9e8b99.chunk.css",
+    "static/js/2.1adeb15d.chunk.js": "/static/js/2.1adeb15d.chunk.js",
+    "static/js/2.1adeb15d.chunk.js.map": "/static/js/2.1adeb15d.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.25d48310121823cde2d9d2c75ea30439.js": "/precache-manifest.25d48310121823cde2d9d2c75ea30439.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.ae9e8b99.chunk.css.map": "/static/css/2.ae9e8b99.chunk.css.map",
+    "static/css/main.5473d1b0.chunk.css.map": "/static/css/main.5473d1b0.chunk.css.map",
+    "static/media/mario.png": "/static/media/mario.43925cfc.png"
+  }
+}
