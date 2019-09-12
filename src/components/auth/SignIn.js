@@ -27,27 +27,31 @@ class SignIn extends Component {
       const {authError, auth} = this.props
       if (auth.uid) return <Redirect to = '/' />
     return (
-      <div className="container space">
-        <div className="row">
-            <div className="col s12 m6 offset-m3">
+    <div className="row">
+        <div className="col s12 m6 offset-m3">
+            <div className="container space">
                 <form onSubmit = {this.handleSubmit} className = "white">
-                    <h5 className = "grey-text text-darken-3">Sign In</h5>
-                    <div className="input-field">
-                        <input id="email" type="email" className="validate" value = {this.state.email} onChange = {this.handleChange}/>
-                        <label htmlFor="email">Email</label>
-                    </div>
-                    <br/>
-                    <div className="input-field">
-                        <input id="password" type="password" className="validate" value = {this.state.password} onChange = {this.handleChange}/>
-                        <label htmlFor="password">Password</label>
-                    </div>
-                    <br/>
-                    <div className="input-field">
-                        <button className = "btn blue lighten-2 z-depth-0">Login</button>
-                        <div className="red-text center">
-                            {authError ? <p>{authError}</p> : null }
+                    <div className="row">
+                        <div className="col s10 offset-s1 m10 offset-m1">
+                            <h5 className = "grey-text text-darken-3">Sign In</h5>
+                            <div className="input-field">
+                                <input id="email" type="email" className="validate" value = {this.state.email} onChange = {this.handleChange}/>
+                                <label htmlFor="email">Email</label>
+                            </div>
+                            <br/>
+                            <div className="input-field">
+                                <input id="password" type="password" className="validate" value = {this.state.password} onChange = {this.handleChange}/>
+                                <label htmlFor="password">Password</label>
+                            </div>
+                            <br/>
+                            <div className="input-field">
+                                <button className = "btn blue lighten-2 z-depth-0">Login</button>
+                                <div className="red-text center">
+                                    {authError ? <p>{authError}</p> : null }
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </div>    
                 </form>
             </div>
         </div> 

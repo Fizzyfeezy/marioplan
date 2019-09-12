@@ -31,23 +31,27 @@ class CreateProject extends Component {
     const {auth} = this.props
     if (!auth.uid) return <Redirect to = '/login'/>
     return (
-      <div className="container space">
         <div className="row">
             <div className="col s12 m8 offset-m2">
+                <div className="container space">
                 <form onSubmit = {this.handleSubmit} className = "white">
-                    <h5 className = "grey-text text-darken-3">Create Project</h5>
-                    <div className="input-field">
-                        <input id="title" type="text" className="validate" value = {this.state.title} onChange = {this.handleChange}/>
-                        <label htmlFor="title">Title</label>
-                    </div>
-                    <br/>
-                    <div className="input-field">
-                        <textarea id="content" className="materialize-textarea" data-length="500" value={this.state.content} onChange={this.handleChange}></textarea>
-                        <label htmlFor="content">Content</label>
-                    </div>
-                    <br/>
-                    <div className="input-field">
-                        <button className = "btn blue lighten-2 z-depth-0">Submit</button>
+                    <div className="row">
+                        <div className="col s10 offset-s1 m10 offset-m1">
+                            <h5 className = "grey-text text-darken-3">Create Project</h5>
+                            <div className="input-field">
+                                <input id="title" type="text" className="validate" value = {this.state.title} onChange = {this.handleChange}/>
+                                <label htmlFor="title">Title</label>
+                            </div>
+                            <br/>
+                            <div className="input-field">
+                                <textarea id="content" className="materialize-textarea" data-length="500" value={this.state.content} onChange={this.handleChange}></textarea>
+                                <label htmlFor="content">Content</label>
+                            </div>
+                            <br/>
+                            <div className="input-field">
+                                <button className = "btn blue lighten-2 z-depth-0">Submit</button>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
